@@ -1,0 +1,66 @@
+<div class="card">
+  <div class="card-header">
+    <h4>System Configuration</h4>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="configForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Total Tickets</label>
+          <input type="number" class="form-control" formControlName="totalTickets">
+          <div class="text-danger" *ngIf="configForm.get('totalTickets')?.touched && configForm.get('totalTickets')?.invalid">
+            <small *ngIf="configForm.get('totalTickets')?.errors?.['required']">Total Tickets is required.</small>
+            <small *ngIf="configForm.get('totalTickets')?.errors?.['min']">Value must be at least 1.</small>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Max Ticket Capacity</label>
+          <input type="number" class="form-control" formControlName="maxTicketCapacity">
+          <div class="text-danger" *ngIf="configForm.get('maxTicketCapacity')?.touched && configForm.get('maxTicketCapacity')?.invalid">
+            <small *ngIf="configForm.get('maxTicketCapacity')?.errors?.['required']">Max Ticket Capacity is required.</small>
+            <small *ngIf="configForm.get('maxTicketCapacity')?.errors?.['min']">Value must be at least 5.</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Ticket Release Rate (ms)</label>
+          <input type="number" class="form-control" formControlName="ticketReleaseRate">
+          <div class="text-danger" *ngIf="configForm.get('ticketReleaseRate')?.touched && configForm.get('ticketReleaseRate')?.invalid">
+            <small *ngIf="configForm.get('ticketReleaseRate')?.errors?.['required']">Ticket Release Rate is required.</small>
+            <small *ngIf="configForm.get('ticketReleaseRate')?.errors?.['min']">Value must be at least 1.</small>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Customer Retrieval Rate (ms)</label>
+          <input type="number" class="form-control" formControlName="customerRetrievalRate">
+          <div class="text-danger" *ngIf="configForm.get('customerRetrievalRate')?.touched && configForm.get('customerRetrievalRate')?.invalid">
+            <small *ngIf="configForm.get('customerRetrievalRate')?.errors?.['required']">Customer Retrieval Rate is required.</small>
+            <small *ngIf="configForm.get('customerRetrievalRate')?.errors?.['min']">Value must be at least 1.</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Number of Vendors</label>
+          <input type="number" class="form-control" formControlName="noOfVendors">
+          <div class="text-danger" *ngIf="configForm.get('noOfVendors')?.touched && configForm.get('noOfVendors')?.invalid">
+            <small *ngIf="configForm.get('noOfVendors')?.errors?.['required']">Number of Vendors is required.</small>
+            <small *ngIf="configForm.get('noOfVendors')?.errors?.['min']">Value must be at least 1.</small>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Number of Customers</label>
+          <input type="number" class="form-control" formControlName="noOfCustomers">
+          <div class="text-danger" *ngIf="configForm.get('noOfCustomers')?.touched && configForm.get('noOfCustomers')?.invalid">
+            <small *ngIf="configForm.get('noOfCustomers')?.errors?.['required']">Number of Customers is required.</small>
+            <small *ngIf="configForm.get('noOfCustomers')?.errors?.['min']">Value must be at least 1.</small>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!configForm.valid">
+        Save Configuration
+      </button>
+    </form>
+  </div>
+</div>

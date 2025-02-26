@@ -1,0 +1,10 @@
+/* Card styling for components */
+.card { 
+    height: 425px; 
+}
+
+/* Canvas styling for responsive charts */
+canvas { 
+    max-height: 350px; 
+    width: 100%; 
+}

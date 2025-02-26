@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header">
+      <h4>Customer Statistics</h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Total Tickets Purchased</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (customer of customers; track customer.customerId) {
+              <tr>
+                <td>{{customer.customerId}}</td>
+                <td>{{customer.totalTicketsPurchased}}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

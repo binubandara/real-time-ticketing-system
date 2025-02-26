@@ -1,0 +1,89 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg custom-nav text-white rounded" aria-label="Thirteenth navbar example">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+      <a class="navbar-brand" href="#">Real-time Ticketing System</a>
+      <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="#configuration">Configuration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#ticketStatus">Ticket Status</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#SystemLogs">System Logs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#TicketAnalytics">Ticket Analytics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#vendorStats">Vendor Statistics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#custStats">Customer Statistics</a>
+        </li>      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header Section -->
+<div class="p-5 mb-4 bg-body-tertiary rounded-3 text-center">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Real-Time Event Ticketing System</h1>
+    <p class="col-md-8 fs-4 mx-auto">
+      A simulation of a real-time ticketing system with system logs, live updates, and an interactive dashboard for monitoring and analytics.
+    </p>
+    <!-- Start and Stop Simulation Buttons -->
+    <button class="btn btn-success me-2" (click)="startSimulation()" [disabled]="isRunning">
+      Start Simulation
+    </button>
+    <button class="btn btn-danger" (click)="stopSimulation()" [disabled]="!isRunning">
+      Stop Simulation
+    </button>
+  </div>
+</div>
+
+<!-- Dashboard Sections -->
+  <div class="row">
+    <div class="col-md-6" id="configuration">
+      <!-- Configuration Input Section -->
+      <app-configuration-input></app-configuration-input>
+    </div>
+
+    <!-- Ticket Status Section -->
+    <div class="col-md-6" id="ticketStatus">
+      <app-ticket-status></app-ticket-status>
+    </div>
+  </div>
+
+  <!-- System Logs Section -->
+  <div class="row mt-4">
+    <div class="col-12" id="SystemLogs">
+      <app-system-log></app-system-log>
+    </div>
+  </div>
+
+  <!-- Ticket Analytics Section -->
+  <div class="row mt-4">
+    <div class="col-12" id="TicketAnalytics">
+      <app-ticket-analytics></app-ticket-analytics>
+    </div>
+  </div>
+
+
+<div class="row mt-4">
+  <!-- Vendor Stats Section -->
+  <div class="col-md-6" id="vendorStats">
+    <app-vendor></app-vendor>
+  </div>
+  <!-- Customer Stats Section -->
+  <div class="col-md-6" id="custStats">
+    <app-customer></app-customer>
+  </div>
+</div>
+

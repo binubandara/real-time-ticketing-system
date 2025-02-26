@@ -1,0 +1,27 @@
+<!-- Vendor statistics table component -->
+<div class="card">
+  <div class="card-header">
+    <h4>Vendor Statistics</h4>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Vendor ID</th>
+            <th>Total Tickets Released</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Iterate over vendors and display their statistics -->
+          @for (vendor of vendors; track vendor.vendorId) {
+            <tr>
+              <td>{{vendor.vendorId}}</td> <!-- Vendor's unique ID -->
+              <td>{{vendor.totalTicketsReleased}}</td> <!-- Total tickets released by the vendor -->
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

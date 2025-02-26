@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Ticket Status</h4>
+  </div>
+  <div class="card-body">
+    <!-- Display ticket information if status is available -->
+    <div *ngIf="status; else defaultValues">
+
+      <div class="row">
+        <!-- Available Tickets -->
+        <div class="col-md-6">
+          <div class="card bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Available Tickets</h5>
+              <p class="card-text display-4">{{ getRemainingTickets() }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total Released Tickets -->
+        <div class="col-md-6">
+          <div class="card bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Total Released</h5>
+              <p class="card-text display-4">{{ status.totalTicketsReleased}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status alert with dynamic class and message -->
+      <div class="alert" [ngClass]="getStatusAlertClass()">
+        <strong>Status:</strong> {{ getStatusMessage() }}
+      </div>
+    </div>
+    
+    <!-- Display default values if no status is available -->
+    <ng-template #defaultValues>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Available Tickets</h5>
+              <p class="card-text display-4">0</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Total Released</h5>
+              <p class="card-text display-4">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-secondary">
+        <strong>Status:</strong> System not initialized
+      </div>
+    </ng-template>
+  </div>
+</div>

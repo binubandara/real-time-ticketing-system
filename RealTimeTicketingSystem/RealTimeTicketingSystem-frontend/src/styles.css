@@ -1,0 +1,38 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Custom styles */
+.log-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.card {
+  margin-bottom: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 0.5em 1em;
+  border-radius: 0.25rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0.5rem;
+  }
+  
+  .card {
+    margin-bottom: 0.5rem;
+  }
+}

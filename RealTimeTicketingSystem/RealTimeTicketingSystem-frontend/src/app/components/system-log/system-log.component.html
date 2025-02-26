@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    <h4>System Logs</h4>
+  </div>
+  <div class="card-body">
+    <!-- Scrollable container for logs -->
+    <div class="log-container" style="height: 300px; overflow-y: auto;">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Level</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Iterate over logs and apply conditional styling for WARNING/ERROR -->
+          <tr *ngFor="let log of logs;" [ngClass]="{'table-warning': log.level === 'WARNING', 'table-danger': log.level === 'ERROR'}">
+            <td>{{log.logTime | date:'medium'}}</td>
+            <td>{{log.level}}</td>
+            <td>{{log.message}}</td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
